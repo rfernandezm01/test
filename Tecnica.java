@@ -3,23 +3,23 @@ package com.mygdx.game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class Tecnica {
+    static Texture texture = new Texture("energia.png");
 
-    Texture texture;
-    float x, y, w, h;
+    float x, y, w, h, v;
 
-    Tecnica(float xNave, float yNave){
-        texture = new Texture("energia.png");
-        w = 60;
-        h = 120;
-        x = xNave-w/2;
+    Tecnica(float xNave, float yNave) {
+        w = 40;
+        h = 60;
+        x = xNave - w / 2;
         y = yNave;
+        v = 12;
     }
-
 
     public void render(SpriteBatch batch) {
         batch.draw(texture, x, y, w, h);
     }
-    void update(){
-        y += 7;
+
+    void update() {
+        y += v;
     }
 }
